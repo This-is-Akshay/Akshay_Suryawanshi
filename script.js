@@ -6,6 +6,28 @@
  */
 
 // ===================================
+// Security: Basic Bot Detection (Non-intrusive)
+// ===================================
+(function() {
+    // Honeypot detection - bots often fill hidden fields
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website_url';
+    honeypot.style.cssText = 'position:absolute;left:-9999px;';
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = 'off';
+    document.body.appendChild(honeypot);
+    
+    // Track if user has interacted (real users do, bots often don't)
+    window._humanInteraction = false;
+    ['mousemove', 'keydown', 'scroll', 'touchstart'].forEach(function(evt) {
+        document.addEventListener(evt, function() {
+            window._humanInteraction = true;
+        }, { once: true, passive: true });
+    });
+})();
+
+// ===================================
 // Resume Download Function (Global)
 // ===================================
 function downloadResume() {
@@ -43,10 +65,13 @@ const _e2 = 'hotmail';
 const _e3 = 'com';
 
 function getEmail() {
+    // Only reveal if there was human interaction (anti-bot measure)
+    if (!window._humanInteraction) return '';
     return _e1 + '@' + _e2 + '.' + _e3;
 }
 
 function revealEmail() {
+    if (!window._humanInteraction) return;
     const email = getEmail();
     const revealBtn = document.getElementById('email-reveal-btn');
     const revealedDiv = document.getElementById('email-revealed');
@@ -88,8 +113,14 @@ const _p1 = '+91 ';
 const _p2 = '97028';
 const _p3 = '91380';
 
+function getPhone() {
+    if (!window._humanInteraction) return '';
+    return _p1 + _p2 + _p3;
+}
+
 function revealPhone() {
-    const phone = _p1 + _p2 + _p3;
+    if (!window._humanInteraction) return;
+    const phone = getPhone();
     const phoneClean = phone.replace(/\s/g, '');
     const revealBtn = document.getElementById('phone-reveal-btn');
     const phoneLink = document.getElementById('phone-link');
