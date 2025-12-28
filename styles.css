@@ -199,6 +199,11 @@ button {
     margin-right: auto;
 }
 
+.text-highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
 /* ===================================
    Header & Navigation
    =================================== */
