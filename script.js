@@ -252,7 +252,7 @@ function revealPhone(btn) {
         initScrollSpy() {
             const observerOptions = {
                 root: null,
-                rootMargin: '-20% 0px -80% 0px',
+                rootMargin: '-10% 0px -60% 0px',
                 threshold: 0
             };
 
@@ -266,6 +266,15 @@ function revealPhone(btn) {
             }, observerOptions);
 
             elements.sections.forEach(section => observer.observe(section));
+
+            // Special handling for contact section at bottom
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                if (documentHeight - scrollPosition < 100) {
+                    this.setActiveLink('contact');
+                }
+            }, { passive: true });
         },
 
         setActiveLink(sectionId) {
