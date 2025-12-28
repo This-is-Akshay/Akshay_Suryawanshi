@@ -70,6 +70,19 @@ function copyEmail() {
     });
 }
 
+function copyLinkedIn() {
+    const linkedInUrl = 'https://linkedin.com/in/akshay-suryawanshi';
+    navigator.clipboard.writeText(linkedInUrl).then(() => {
+        const btns = document.querySelectorAll('.contact__copy-btn');
+        const copyBtn = btns[btns.length - 1]; // LinkedIn is the last copy button
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+        setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+        }, 2000);
+    });
+}
+
 // Obfuscated phone parts
 const _p1 = '+91 ';
 const _p2 = '97028';
