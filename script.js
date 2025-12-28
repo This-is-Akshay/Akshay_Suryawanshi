@@ -237,6 +237,11 @@ function revealPhone(btn) {
                     const target = document.querySelector(href);
                     if (target) {
                         e.preventDefault();
+                        
+                        // Immediately set active link on click
+                        const sectionId = href.replace('#', '');
+                        this.setActiveLink(sectionId);
+                        
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
