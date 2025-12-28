@@ -669,26 +669,46 @@ button {
 }
 
 .about__content {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* Story Timeline */
-.about__story {
-    display: grid;
-    gap: var(--spacing-xl);
+.about__intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    text-align: center;
     margin-bottom: var(--spacing-3xl);
 }
 
-.about__chapter {
+/* Vertical Timeline */
+.about__timeline {
     position: relative;
-    padding-left: var(--spacing-2xl);
-    border-left: 2px solid var(--color-border);
+    padding-left: var(--spacing-3xl);
 }
 
-.about__chapter-num {
+.about__timeline::before {
+    content: '';
     position: absolute;
-    left: -1rem;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-light));
+}
+
+.about__timeline-item {
+    position: relative;
+    padding-bottom: var(--spacing-2xl);
+}
+
+.about__timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.about__timeline-num {
+    position: absolute;
+    left: calc(-1 * var(--spacing-3xl) + 0.05rem);
     top: 0;
     width: 2rem;
     height: 2rem;
@@ -700,88 +720,62 @@ button {
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 700;
+    box-shadow: 0 0 0 4px var(--color-bg-alt);
+    z-index: 1;
 }
 
-.about__chapter h3 {
+.about__timeline-content {
+    background: var(--color-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.about__timeline-content:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.about__timeline-content h3 {
     font-size: 1.15rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-sm);
 }
 
-.about__chapter p {
+.about__timeline-content p {
     color: var(--color-text-muted);
     line-height: 1.7;
-    font-size: 1rem;
-}
-
-/* Approach Cards */
-.about__approach {
-    margin-bottom: var(--spacing-3xl);
-}
-
-.about__approach h3 {
-    font-size: 1.25rem;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-.about__traits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.about__trait {
-    padding: var(--spacing-lg);
-    background: var(--color-bg);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    border: 1px solid var(--color-border);
-    transition: all var(--transition-fast);
-}
-
-.about__trait:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-.about__trait-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: var(--spacing-sm);
-}
-
-.about__trait strong {
-    display: block;
-    color: var(--color-text);
     font-size: 0.95rem;
-    margin-bottom: var(--spacing-xs);
-}
-
-.about__trait p {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
     margin: 0;
 }
 
-/* CTA */
-.about__cta {
-    text-align: center;
-    padding: var(--spacing-2xl);
-    background: var(--color-bg);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border);
-}
-
-.about__cta p {
-    color: var(--color-text-muted);
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-lg);
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+/* Responsive: Stack on mobile */
+@media (max-width: 576px) {
+    .about__timeline {
+        padding-left: var(--spacing-2xl);
+    }
+    
+    .about__timeline::before {
+        left: 0.75rem;
+    }
+    
+    .about__timeline-num {
+        left: calc(-1 * var(--spacing-2xl) + 0.25rem);
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.65rem;
+    }
+    
+    .about__timeline-content {
+        padding: var(--spacing-md);
+    }
+    
+    .about__intro {
+        font-size: 1rem;
+        text-align: left;
+    }
 }
 
 /* ===================================
