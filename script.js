@@ -46,18 +46,27 @@ function getEmail() {
     return _e1 + '@' + _e2 + '.' + _e3;
 }
 
-function revealAndCopyEmail(btn) {
-    const emailEl = document.getElementById('protected-email');
+function revealEmail() {
     const email = getEmail();
+    const revealBtn = document.getElementById('email-reveal-btn');
+    const revealedDiv = document.getElementById('email-revealed');
+    const emailLink = document.getElementById('email-link');
     
-    // Reveal email and copy to clipboard
-    emailEl.innerHTML = `<a href="mailto:${email}">${email}</a>`;
-    
+    emailLink.href = 'mailto:' + email;
+    emailLink.textContent = email;
+    revealBtn.style.display = 'none';
+    revealedDiv.style.display = 'flex';
+}
+
+function copyEmail() {
+    const email = getEmail();
     navigator.clipboard.writeText(email).then(() => {
-        // Show toast notification
-        if (typeof showToast === 'function') {
-            showToast('Email copied to clipboard!');
-        }
+        const copyBtn = document.querySelector('.contact__copy-btn');
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+        setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+        }, 2000);
     });
 }
 
@@ -66,11 +75,16 @@ const _p1 = '+91 ';
 const _p2 = '97028';
 const _p3 = '91380';
 
-function revealPhone(btn) {
-    const phoneEl = document.getElementById('protected-phone');
+function revealPhone() {
     const phone = _p1 + _p2 + _p3;
     const phoneClean = phone.replace(/\s/g, '');
-    phoneEl.innerHTML = `<a href="tel:${phoneClean}">${phone}</a>`;
+    const revealBtn = document.getElementById('phone-reveal-btn');
+    const phoneLink = document.getElementById('phone-link');
+    
+    phoneLink.href = 'tel:' + phoneClean;
+    phoneLink.textContent = phone;
+    revealBtn.style.display = 'none';
+    phoneLink.style.display = 'inline';
 }
 
 (function () {

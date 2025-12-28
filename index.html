@@ -1509,14 +1509,25 @@
                             </div>
                             <div class="contact__details">
                                 <h3>Email</h3>
-                                <p id="protected-email" class="contact__value"></p>
-                                <button class="contact__reveal-btn" id="email-action-btn" onclick="revealAndCopyEmail(this)" aria-label="Reveal and copy email address">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                        <circle cx="12" cy="12" r="3"></circle>
-                                    </svg>
-                                    Click to Reveal
-                                </button>
+                                <div class="contact__protected" id="email-container">
+                                    <button class="contact__reveal-btn" id="email-reveal-btn" onclick="revealEmail()" aria-label="Click to reveal email">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        Click to Reveal
+                                    </button>
+                                    <div class="contact__revealed" id="email-revealed" style="display: none;">
+                                        <a id="email-link" href=""></a>
+                                        <button class="contact__copy-btn" onclick="copyEmail()" aria-label="Copy email address">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                            </svg>
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
@@ -1528,14 +1539,16 @@
                             </div>
                             <div class="contact__details">
                                 <h3>Phone</h3>
-                                <p id="protected-phone" class="contact__value"></p>
-                                <button class="contact__reveal-btn" id="phone-action-btn" onclick="revealPhone(this)" aria-label="Click to reveal phone number">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                        <circle cx="12" cy="12" r="3"></circle>
-                                    </svg>
-                                    Click to Reveal
-                                </button>
+                                <div class="contact__protected" id="phone-container">
+                                    <button class="contact__reveal-btn" id="phone-reveal-btn" onclick="revealPhone()" aria-label="Click to reveal phone">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        Click to Reveal
+                                    </button>
+                                    <a id="phone-link" href="" style="display: none;"></a>
+                                </div>
                             </div>
                         </div>
                         
