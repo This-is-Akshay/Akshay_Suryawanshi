@@ -50,19 +50,15 @@ function revealAndCopyEmail(btn) {
     const emailEl = document.getElementById('protected-email');
     const email = getEmail();
     
-    if (emailEl.textContent.includes('[')) {
-        // First click - reveal email
-        emailEl.textContent = email;
-        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy Email`;
-    } else {
-        // Second click - copy email
-        navigator.clipboard.writeText(email).then(() => {
-            btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
-            setTimeout(() => {
-                btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy Email`;
-            }, 2000);
-        });
-    }
+    // Reveal email and copy to clipboard
+    emailEl.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+    
+    navigator.clipboard.writeText(email).then(() => {
+        // Show toast notification
+        if (typeof showToast === 'function') {
+            showToast('Email copied to clipboard!');
+        }
+    });
 }
 
 // Obfuscated phone parts
@@ -71,8 +67,10 @@ const _p2 = '97028';
 const _p3 = '91380';
 
 function revealPhone(btn) {
+    const phoneEl = document.getElementById('protected-phone');
     const phone = _p1 + _p2 + _p3;
-    btn.outerHTML = `<p>${phone}</p>`;
+    const phoneClean = phone.replace(/\s/g, '');
+    phoneEl.innerHTML = `<a href="tel:${phoneClean}">${phone}</a>`;
 }
 
 (function () {
