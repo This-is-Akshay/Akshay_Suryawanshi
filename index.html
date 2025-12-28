@@ -1509,13 +1509,13 @@
                             </div>
                             <div class="contact__details">
                                 <h3>Email</h3>
-                                <p>akshay.suryawanshi@hotmail.com</p>
-                                <button class="btn btn--small copy-email" data-email="akshay.suryawanshi@hotmail.com" aria-label="Copy email address to clipboard">
+                                <p id="protected-email">[Click to reveal email]</p>
+                                <button class="btn btn--small copy-email" id="email-action-btn" onclick="revealAndCopyEmail(this)" aria-label="Reveal and copy email address">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                                     </svg>
-                                    Copy Email
+                                    Reveal Email
                                 </button>
                             </div>
                         </div>
@@ -1528,7 +1528,9 @@
                             </div>
                             <div class="contact__details">
                                 <h3>Phone</h3>
-                                <p>+91 9702891380</p>
+                                <button class="btn btn--small reveal-phone" onclick="revealPhone(this)" aria-label="Click to reveal phone number">
+                                    Click to Reveal
+                                </button>
                             </div>
                         </div>
                         
