@@ -662,6 +662,129 @@ button {
 }
 
 /* ===================================
+   About Section
+   =================================== */
+.about {
+    background: var(--color-bg-alt);
+}
+
+.about__content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Story Timeline */
+.about__story {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.about__chapter {
+    position: relative;
+    padding-left: var(--spacing-2xl);
+    border-left: 2px solid var(--color-border);
+}
+
+.about__chapter-num {
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.about__chapter h3 {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about__chapter p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Approach Cards */
+.about__approach {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.about__approach h3 {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.about__traits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.about__trait {
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.about__trait:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.about__trait-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.about__trait strong {
+    display: block;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.about__trait p {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* CTA */
+.about__cta {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--color-bg);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.about__cta p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===================================
    Projects Section
    =================================== */
 .projects__filters {
