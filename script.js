@@ -6,6 +6,102 @@
  */
 
 // ===================================
+// Experience Duration Auto-Calculator
+// ===================================
+(function() {
+    // Career milestones (fixed dates)
+    const INFOSEC_START = new Date(2024, 2, 1);  // Mar 2024 (month is 0-indexed)
+    const INFRA_START = new Date(2017, 4, 1);    // May 2017
+    const INFRA_END = new Date(2024, 2, 1);      // Mar 2024 (when InfoSec started)
+    
+    /**
+     * Calculate duration between two dates
+     * @param {Date} startDate - Start date
+     * @param {Date} endDate - End date (defaults to today)
+     * @returns {Object} - { years, months, totalMonths }
+     */
+    function calculateDuration(startDate, endDate = new Date()) {
+        let years = endDate.getFullYear() - startDate.getFullYear();
+        let months = endDate.getMonth() - startDate.getMonth();
+        
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+        
+        // Adjust for day of month
+        if (endDate.getDate() < startDate.getDate()) {
+            months--;
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+        }
+        
+        return {
+            years: years,
+            months: months,
+            totalMonths: (years * 12) + months
+        };
+    }
+    
+    /**
+     * Format duration as human-readable string
+     * @param {Object} duration - { years, months }
+     * @param {boolean} shortFormat - Use "yr/mo" instead of "year/months"
+     * @returns {string} - e.g., "1 year 10 months" or "6 years"
+     */
+    function formatDuration(duration, shortFormat = false) {
+        const { years, months } = duration;
+        const parts = [];
+        
+        if (years > 0) {
+            parts.push(`${years} ${shortFormat ? 'yr' : (years === 1 ? 'year' : 'years')}`);
+        }
+        if (months > 0) {
+            parts.push(`${months} ${shortFormat ? 'mo' : (months === 1 ? 'month' : 'months')}`);
+        }
+        
+        return parts.join(' ') || '0 months';
+    }
+    
+    /**
+     * Update all experience duration elements in the DOM
+     */
+    function updateExperienceDurations() {
+        const today = new Date();
+        
+        // Calculate durations
+        const infosecDuration = calculateDuration(INFOSEC_START, today);
+        const infraDuration = calculateDuration(INFRA_START, INFRA_END);
+        const totalDuration = calculateDuration(INFRA_START, today);
+        
+        // Update DOM elements
+        const updates = {
+            'infosec-exp': formatDuration(infosecDuration),
+            'infosec-exp-about': formatDuration(infosecDuration),
+            'infra-exp': formatDuration(infraDuration),
+            'infra-exp-about': `${infraDuration.years}+ years`,
+            'total-exp': `${totalDuration.years} Years ${totalDuration.months} Months`
+        };
+        
+        for (const [id, value] of Object.entries(updates)) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.textContent = value;
+            }
+        }
+    }
+    
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateExperienceDurations);
+    } else {
+        updateExperienceDurations();
+    }
+})();
+
+// ===================================
 // Security: Basic Bot Detection (Non-intrusive)
 // ===================================
 (function() {
