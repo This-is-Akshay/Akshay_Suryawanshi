@@ -67,16 +67,24 @@
         const infraDuration = calculateDuration(INFRA_START, INFRA_END);
         const totalDuration = calculateDuration(INFRA_START, today);
         
-        // Update DOM elements
+        // InfoSec: show X+ if months >= 9, else X
+        let infosecYears = infosecDuration.years;
+        let infosecDisplay = infosecYears;
+        if (infosecDuration.months >= 9) {
+            infosecDisplay = (infosecYears + 1) + '+';
+        } else {
+            infosecDisplay = infosecYears;
+        }
+
         const updates = {
-            'infosec-exp': formatDuration(infosecDuration),
-            'infosec-exp-about': formatDuration(infosecDuration),
+            'infosec-exp': `${infosecDisplay} Years`,
+            'infosec-exp-about': `${infosecDisplay} Years`,
             'infra-exp': formatDuration(infraDuration),
             'infra-exp-about': `${infraDuration.years}+ years`,
             'total-exp': `${totalDuration.years}+ Years`,
             'total-exp-hero': `${totalDuration.years}+ Years Experience`
         };
-        
+
         for (const [id, value] of Object.entries(updates)) {
             const element = document.getElementById(id);
             if (element) {
