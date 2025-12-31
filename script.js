@@ -15,33 +15,24 @@
     const INFRA_END = new Date(2024, 2, 1);      // Mar 2024 (when InfoSec started)
     
     /**
-     * Calculate duration between two dates
+     * Calculate duration between two dates (LinkedIn-style: counts both start and end months)
      * @param {Date} startDate - Start date
      * @param {Date} endDate - End date (defaults to today)
      * @returns {Object} - { years, months, totalMonths }
      */
     function calculateDuration(startDate, endDate = new Date()) {
-        let years = endDate.getFullYear() - startDate.getFullYear();
-        let months = endDate.getMonth() - startDate.getMonth();
+        // LinkedIn-style calculation: include both start and end months
+        let totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 
+                        + (endDate.getMonth() - startDate.getMonth()) 
+                        + 1; // +1 to include the starting month
         
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
-        
-        // Adjust for day of month
-        if (endDate.getDate() < startDate.getDate()) {
-            months--;
-            if (months < 0) {
-                years--;
-                months += 12;
-            }
-        }
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
         
         return {
             years: years,
             months: months,
-            totalMonths: (years * 12) + months
+            totalMonths: totalMonths
         };
     }
     
