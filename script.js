@@ -82,7 +82,8 @@
             'infosec-exp-about': formatDuration(infosecDuration),
             'infra-exp': formatDuration(infraDuration),
             'infra-exp-about': `${infraDuration.years}+ years`,
-            'total-exp': `${totalDuration.years} Years ${totalDuration.months} Months`
+            'total-exp': `${totalDuration.years} Years ${totalDuration.months} Months`,
+            'total-exp-hero': `${totalDuration.years}+ Years Experience`
         };
         
         for (const [id, value] of Object.entries(updates)) {
