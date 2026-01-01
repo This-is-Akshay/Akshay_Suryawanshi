@@ -254,8 +254,11 @@ function revealPhone() {
         filterBtns: document.querySelectorAll('.filter-btn'),
         projectCards: document.querySelectorAll('.project-card'),
 
-        // Project toggles
+        // Project toggles (for project cards)
         projectToggles: document.querySelectorAll('.project-card__toggle'),
+        
+        // Timeline toggles (for experience section - progressive disclosure)
+        timelineToggles: document.querySelectorAll('.timeline__toggle'),
 
         // Copy email buttons
         copyEmailBtns: document.querySelectorAll('.copy-email'),
@@ -540,6 +543,44 @@ function revealPhone() {
     };
 
     // ===================================
+    // Timeline Accordion (Experience Section)
+    // UX: Progressive disclosure - keeps summary visible for quick HR scan,
+    // allows hiring managers to deep-dive into technical details
+    // ===================================
+    const TimelineAccordion = {
+        init() {
+            elements.timelineToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => this.toggle(toggle));
+            });
+        },
+
+        toggle(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            const detailsId = button.getAttribute('aria-controls');
+            const details = document.getElementById(detailsId);
+
+            if (isExpanded) {
+                button.setAttribute('aria-expanded', 'false');
+                details?.setAttribute('hidden', '');
+                button.querySelector('span').textContent = 'View Technical Details';
+            } else {
+                button.setAttribute('aria-expanded', 'true');
+                details?.removeAttribute('hidden');
+                button.querySelector('span').textContent = 'Hide Technical Details';
+                
+                // Smooth scroll to ensure expanded content is visible
+                setTimeout(() => {
+                    const rect = details.getBoundingClientRect();
+                    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+                    if (!isVisible) {
+                        button.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        }
+    };
+
+    // ===================================
     // Toast Notifications
     // ===================================
     const Toast = {
@@ -700,6 +741,7 @@ function revealPhone() {
         BackToTop.init();
         ProjectFilters.init();
         ProjectAccordion.init();
+        TimelineAccordion.init();
         CopyToClipboard.init();
         RevealOnScroll.init();
         KeyboardNav.init();

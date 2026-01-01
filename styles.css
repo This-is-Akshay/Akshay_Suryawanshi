@@ -842,6 +842,115 @@ button {
 }
 
 /* ===================================
+   Highlights / At a Glance Section
+   UX Decision: Quick scan section for HR/Recruiters (30-60 seconds)
+   Shows key impact metrics without requiring deep-dive
+   =================================== */
+.highlights {
+    background: var(--color-bg);
+}
+
+.highlights__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.highlight-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.highlight-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto var(--spacing-md);
+    border-radius: var(--radius-xl);
+}
+
+.highlight-card__icon--security {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.highlight-card__icon--risk {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.highlight-card__icon--ops {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.highlight-card__icon--cloud {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.highlight-card__icon--compliance {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.highlight-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.highlight-card__metrics {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.highlight-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight-metric__value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.1;
+}
+
+.highlight-metric__label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+}
+
+.highlight-card__description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===================================
    Projects Section
    =================================== */
 .projects__filters {
@@ -941,6 +1050,25 @@ button {
     color: var(--color-primary);
 }
 
+/* Domain Badges - UX: Quickly identify project category (SOC, DFIR, Cloud, GRC, VM, Automation) */
+.project-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.project-card__domain {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
 .project-card__category {
     font-size: 0.75rem;
     font-weight: 600;
@@ -950,6 +1078,40 @@ button {
     background: var(--color-accent-light);
     color: var(--color-accent);
     border-radius: var(--radius-full);
+}
+
+/* Impact Metrics Badges - UX: Key numbers visible at a glance for quick scanning */
+.project-card__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.metric-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-primary);
+}
+
+.metric-badge strong {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .metric-badge {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .metric-badge strong {
+    color: var(--color-primary);
 }
 
 .project-card__title {
@@ -1053,6 +1215,8 @@ button {
 
 /* ===================================
    Experience Timeline
+   UX Decision: Progressive disclosure pattern - summary visible, technical details expandable
+   HR gets quick scan (30-60 sec), hiring managers can deep-dive
    =================================== */
 .experience {
     background: var(--color-bg-alt);
@@ -1060,7 +1224,7 @@ button {
 
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding-left: var(--spacing-xl);
 }
@@ -1071,8 +1235,9 @@ button {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 3px;
     background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+    border-radius: var(--radius-full);
 }
 
 .timeline__item {
@@ -1086,14 +1251,20 @@ button {
 
 .timeline__marker {
     position: absolute;
-    left: calc(-1 * var(--spacing-xl) - 6px);
+    left: calc(-1 * var(--spacing-xl) - 7px);
     top: 0;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     background: var(--color-primary);
     border: 3px solid var(--color-bg-alt);
     border-radius: var(--radius-full);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.timeline__item:hover .timeline__marker {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px var(--color-primary-light);
 }
 
 .timeline__content {
@@ -1102,6 +1273,12 @@ button {
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.timeline__content:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
 }
 
 .timeline__header {
@@ -1115,23 +1292,19 @@ button {
 
 .timeline__date {
     font-size: 0.875rem;
-
-.timeline__company {
-    font-weight: bold;
-    color: #1a237e;
-    letter-spacing: 0.01em;
-}
     font-weight: 600;
     color: var(--color-primary);
 }
 
 .timeline__company {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: 0.01em;
 }
 
 .timeline__title {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: var(--spacing-xs);
@@ -1140,8 +1313,61 @@ button {
 .timeline__subtitle {
     font-size: 0.95rem;
     color: var(--color-accent);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: var(--spacing-md);
+}
+
+/* Ownership & Leadership Badges - UX: Quickly shows scope and responsibility level */
+.timeline__ownership {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.ownership-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-full);
+    border: 1.5px solid;
+}
+
+.ownership-badge--lead {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border-color: #10b981;
+}
+
+.ownership-badge--owner {
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+    border-color: #6366f1;
+}
+
+.ownership-badge--global {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border-color: #f59e0b;
+}
+
+/* Summary Section - Quick scan content */
+.timeline__summary {
+    margin-bottom: var(--spacing-md);
+}
+
+.timeline__summary-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
 }
 
 .timeline__list {
@@ -1152,29 +1378,106 @@ button {
 
 .timeline__list li {
     margin-bottom: var(--spacing-xs);
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+.timeline__list li strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* Expandable Toggle Button */
+.timeline__toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: var(--spacing-sm) 0;
+    margin-top: var(--spacing-sm);
+    transition: gap var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.timeline__toggle:hover {
+    gap: var(--spacing-md);
+    color: var(--color-primary-dark);
+}
+
+.timeline__toggle svg {
+    transition: transform var(--transition-fast);
+}
+
+.timeline__toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Technical Details Section - Deep-dive content */
+.timeline__details {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    animation: slideDown var(--transition-base);
+}
+
+.detail-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px dashed var(--color-border);
+}
+
+.detail-section ul {
+    padding-left: var(--spacing-lg);
+    list-style: disc;
+    color: var(--color-text-muted);
+}
+
+.detail-section li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.7;
+}
+
+.detail-section li strong {
+    color: var(--color-text);
+    font-weight: 600;
 }
 
 .timeline__location {
-  display: inline-block;
-  font-size: 0.85em;
-  font-weight: 600;
-  margin-left: 0.75em;
-  padding: 0.15em 0.7em;
-  border-radius: 1em;
-  vertical-align: middle;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-left: 0.75em;
+    padding: 0.2em 0.75em;
+    border-radius: 1em;
+    vertical-align: middle;
 }
 
 .timeline__location.remote {
-  background: #e0f7fa;
-  color: #00796b;
-  border: 1px solid #00bfae;
+    background: rgba(0, 191, 174, 0.1);
+    color: #00796b;
+    border: 1.5px solid #00bfae;
 }
 
 .timeline__location.onsite {
-  background: #fff3e0;
-  color: #e65100;
-  border: 1px solid #ff9800;
+    background: rgba(255, 152, 0, 0.1);
+    color: #e65100;
+    border: 1.5px solid #ff9800;
 }
 
 /* ===================================
