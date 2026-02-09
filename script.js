@@ -67,14 +67,9 @@
         const infraDuration = calculateDuration(INFRA_START, INFRA_END);
         const totalDuration = calculateDuration(INFRA_START, today);
         
-        // InfoSec: show X+ if months >= 9, else X
+        // InfoSec: always show X+ years
         let infosecYears = infosecDuration.years;
-        let infosecDisplay = infosecYears;
-        if (infosecDuration.months >= 9) {
-            infosecDisplay = (infosecYears + 1) + '+';
-        } else {
-            infosecDisplay = infosecYears;
-        }
+        let infosecDisplay = infosecYears + '+';
 
         const updates = {
             'infosec-exp': `${infosecDisplay} Years`,
