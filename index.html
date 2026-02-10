@@ -52,10 +52,9 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#highlights" class="nav__link">At a Glance</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#highlights" class="nav__link">Impact</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
@@ -93,48 +92,32 @@
         <section class="hero section" id="home">
             <div class="container hero__container">
                 <div class="hero__content reveal">
-                    <span class="hero__subtitle">Hello, I'm</span>
                     <h1 class="hero__title">Akshay Suryawanshi</h1>
                     <p class="hero__role">Lead Information Security Engineer</p>
-                    <p class="hero__tagline">(Acting Team Lead - Information Security)</p>
+                    <p class="hero__tagline">Acting Team Lead · SOC, DFIR, Cloud Security, Threat Intelligence, Vulnerability Management & GRC</p>
                     
-                    <div class="hero__location">
-                        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span>Mumbai, India</span>
-                        <span class="hero__experience-badge">
-                            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                            </svg>
-                            <span id="total-exp-hero">8+ Years Experience</span>
-                        </span>
+                    <p class="hero__value-prop">Security leader with <strong><span id="total-exp-hero">8+</span> years</strong> of experience protecting global organizations. I build and mature security programs that reduce risk, enable compliance, and support business growth.</p>
+                    
+                    <div class="hero__availability-block">
+                        <p class="hero__location-text">Currently based in <strong>Mumbai, India</strong></p>
+                        <p class="hero__location-text">Open to opportunities in <strong>Ireland</strong>, <strong>United Kingdom</strong>, <strong>European Union</strong>, and <strong>India</strong></p>
+                        <p class="hero__location-text">Open to <span class="hero__work-type">Remote</span> · <span class="hero__work-type">Hybrid</span> · <span class="hero__work-type">Onsite</span> roles</p>
                     </div>
                     
-                    <div class="hero__summary">
-                        <div class="hero__summary-block">
-                            <h3 class="hero__summary-title">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                                Information Security
-                            </h3>
-                            <p><strong><span id="infosec-exp">1 year 10 months</span></strong> leading <strong>Cybersecurity, Security Operations, Incident Response, DFIR, Vulnerability Management, Threat Intelligence, Cloud Security</strong> (AWS, Azure, OCI), and <strong>GRC</strong>. Proven track record in building and maturing security programs, reducing organizational risk, and driving compliance initiatives.</p>
-                        </div>
-                        <div class="hero__summary-block">
-                            <h3 class="hero__summary-title">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                                </svg>
-                                Infrastructure Engineering
-                            </h3>
-                            <p><strong>6+ years</strong> of hands-on experience in <strong>Windows Server, VMware, Nutanix, AWS, Azure, and OCI</strong>. This deep infrastructure foundation enables me to bridge the gap between IT and Security, translating technical depth into strategic risk reduction.</p>
-                        </div>
+                    <!-- Key Security Initiatives Led -->
+                    <div class="hero__initiatives">
+                        <h3 class="hero__initiatives-title">Key Security Initiatives Led</h3>
+                        <ul class="hero__initiatives-list">
+                            <li>Led global SOC & Incident Response operations supporting <strong>3,000+ employees</strong> across <strong>22 countries</strong></li>
+                            <li>Designed and executed phishing awareness & simulation programs, reducing click-through rates by <strong>65%</strong></li>
+                            <li>Built and operationalized IR playbooks & DFIR workflows for P1/P2 incidents</li>
+                            <li>Implemented AI-assisted SOC triage and alert enrichment, improving <strong>MTTD/MTTR by ~50%</strong></li>
+                            <li>Owned enterprise vulnerability management lifecycle across cloud, infrastructure, and applications</li>
+                            <li>Drove cloud security architecture reviews across <strong>AWS, Azure, and OCI</strong> environments</li>
+                            <li>Led security governance, risk assessments, and audit readiness aligned with <strong>ISO 27001, NIST CSF, CSA CCM, CIS Controls, GDPR, CCPA</strong>, and other global regulatory frameworks</li>
+                            <li>Led enterprise threat intelligence operations, integrating internal telemetry and external intelligence feeds to proactively detect, prioritize, and respond to emerging threats</li>
+                            <li>Defined and governed enterprise vulnerability management strategy, prioritizing remediation using <strong>CVSS, exploitability, and asset criticality</strong> across cloud, infrastructure, and applications</li>
+                        </ul>
                     </div>
                     
                     <div class="hero__actions">
@@ -172,72 +155,35 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about section" id="about" aria-label="About Me">
-            <div class="container">
-                <h2 class="section__title reveal">About Me</h2>
-                <p class="section__subtitle reveal">From <span class="text-highlight">Infrastructure</span> Roots to <span class="text-highlight">Security Leadership</span></p>
-                
-                <div class="about__content reveal">
-                    <p class="about__intro">
-                        I'm Akshay Suryawanshi — an Information Security professional with <span id="infosec-exp-about">1 year 10 months</span> leading InfoSec and over <span id="infra-exp-about">6+ years</span> of Infrastructure experience, securing global hybrid environments across on-premises datacentres and multi-cloud platforms (AWS, Azure, OCI). I bring a blend of deep technical expertise, incident response experience, and strong security governance.
-                    </p>
-                    
-                    <div class="about__timeline" role="list" aria-label="Career timeline">
-                        <div class="about__timeline-item" role="listitem">
-                            <span class="about__timeline-num" aria-hidden="true">01</span>
-                            <div class="about__timeline-content">
-                                <h3>The Foundation</h3>
-                                <p>My career began in core infrastructure engineering, working hands-on with Windows Server, VMware, Nutanix, and cloud platforms such as AWS, Azure, and OCI. This foundation enables me to understand systems deeply, troubleshoot effectively, and design security controls that are practical and scalable.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="about__timeline-item" role="listitem">
-                            <span class="about__timeline-num" aria-hidden="true">02</span>
-                            <div class="about__timeline-content">
-                                <h3>The Transition</h3>
-                                <p>Over time, I transitioned into Information Security, applying my infrastructure mindset to security challenges. I don't just configure controls — I understand the systems they protect, ensuring security improvements do not disrupt operations.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="about__timeline-item" role="listitem">
-                            <span class="about__timeline-num" aria-hidden="true">03</span>
-                            <div class="about__timeline-content">
-                                <h3>The Present</h3>
-                                <p>Today, I lead security initiatives across Incident Response, Digital Forensics, SOC Operations, Cloud Security, Vulnerability Management, Threat Intelligence, Network Security, and Governance, Risk & Compliance — bringing engineering precision to every security decision.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- At a Glance Section - UX: Quick 30-60 second scan for HR/Recruiters -->
+        <!-- Security Impact Section -->
         <section class="highlights section" id="highlights">
             <div class="container">
-                <h2 class="section__title reveal">At a Glance</h2>
-                <p class="section__subtitle reveal"><span class="text-highlight">Key Achievements</span> & Impact Metrics</p>
+                <h2 class="section__title reveal">Security Impact</h2>
+                <p class="section__subtitle reveal"><span class="text-highlight">Measurable outcomes</span> across security operations, risk reduction, and compliance</p>
                 
                 <div class="highlights__grid reveal">
-                    <!-- Security Leadership -->
+                    <!-- Security Operations & Incident Response -->
                     <div class="highlight-card">
                         <div class="highlight-card__icon highlight-card__icon--security">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             </svg>
                         </div>
-                        <h3 class="highlight-card__title">Security Leadership</h3>
+                        <h3 class="highlight-card__title">Security Operations & Incident Response</h3>
                         <div class="highlight-card__metrics">
                             <div class="highlight-metric">
                                 <span class="highlight-metric__value">3,000+</span>
                                 <span class="highlight-metric__label">Employees Protected</span>
                             </div>
                             <div class="highlight-metric">
-                                <span class="highlight-metric__value">10+</span>
-                                <span class="highlight-metric__label">Countries Covered</span>
+                                <span class="highlight-metric__value">22</span>
+                                <span class="highlight-metric__label">Countries Supported</span>
+                            </div>
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">200+</span>
+                                <span class="highlight-metric__label">Daily Alerts Processed</span>
                             </div>
                         </div>
-                        <p class="highlight-card__description">Acting Team Lead for Security Operations, IR, DFIR, and Threat Intelligence</p>
                     </div>
                     
                     <!-- Risk Reduction -->
@@ -251,60 +197,20 @@
                         <div class="highlight-card__metrics">
                             <div class="highlight-metric">
                                 <span class="highlight-metric__value">65%</span>
-                                <span class="highlight-metric__label">Phishing Click Reduction</span>
+                                <span class="highlight-metric__label">Phishing Click-Rate Reduction</span>
                             </div>
                             <div class="highlight-metric">
                                 <span class="highlight-metric__value">60%</span>
-                                <span class="highlight-metric__label">Critical Vuln Backlog Cut</span>
+                                <span class="highlight-metric__label">Critical Vuln Backlog Reduction</span>
                             </div>
-                        </div>
-                        <p class="highlight-card__description">Measurable security posture improvements through program maturity</p>
-                    </div>
-                    
-                    <!-- Operational Excellence -->
-                    <div class="highlight-card">
-                        <div class="highlight-card__icon highlight-card__icon--ops">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 6v6l4 2"></path>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-card__title">SOC & Automation</h3>
-                        <div class="highlight-card__metrics">
                             <div class="highlight-metric">
                                 <span class="highlight-metric__value">~50%</span>
-                                <span class="highlight-metric__label">Faster Alert Triage</span>
-                            </div>
-                            <div class="highlight-metric">
-                                <span class="highlight-metric__value">200+</span>
-                                <span class="highlight-metric__label">Daily Alerts Processed</span>
+                                <span class="highlight-metric__label">Improved MTTD/MTTR</span>
                             </div>
                         </div>
-                        <p class="highlight-card__description">AI-driven SOC automation reducing analyst fatigue and improving MTTD/MTTR</p>
                     </div>
                     
-                    <!-- Cloud & Infrastructure -->
-                    <div class="highlight-card">
-                        <div class="highlight-card__icon highlight-card__icon--cloud">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-card__title">Cloud & Infrastructure</h3>
-                        <div class="highlight-card__metrics">
-                            <div class="highlight-metric">
-                                <span class="highlight-metric__value">500+</span>
-                                <span class="highlight-metric__label">Servers Migrated to AWS</span>
-                            </div>
-                            <div class="highlight-metric">
-                                <span class="highlight-metric__value">$240K</span>
-                                <span class="highlight-metric__label">Annual Cost Savings</span>
-                            </div>
-                        </div>
-                        <p class="highlight-card__description">Led large-scale cloud migration with cost optimization (33% reduction)</p>
-                    </div>
-                    
-                    <!-- Compliance -->
+                    <!-- Compliance & GRC -->
                     <div class="highlight-card">
                         <div class="highlight-card__icon highlight-card__icon--compliance">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -319,11 +225,87 @@
                                 <span class="highlight-metric__label">Critical Audit Findings</span>
                             </div>
                             <div class="highlight-metric">
-                                <span class="highlight-metric__value">60%</span>
-                                <span class="highlight-metric__label">Faster Audit Prep</span>
+                                <span class="highlight-metric__value">~60%</span>
+                                <span class="highlight-metric__label">Faster Audit Preparation</span>
                             </div>
                         </div>
-                        <p class="highlight-card__description">ISO 27001, NIST CSF, and CIS Controls alignment with continuous compliance</p>
+                        <p class="highlight-card__description">ISO 27001 / NIST CSF / CIS Controls alignment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Infrastructure & Cloud Impact Section -->
+        <section class="highlights highlights--infra section" id="infra-impact">
+            <div class="container">
+                <h2 class="section__title reveal">Infrastructure &amp; Cloud Impact</h2>
+                <p class="section__subtitle reveal"><span class="text-highlight">Cloud architecture</span>, cost optimization, and migration at scale</p>
+                
+                <div class="highlights__grid reveal">
+                    <!-- Cloud Security & Architecture -->
+                    <div class="highlight-card">
+                        <div class="highlight-card__icon highlight-card__icon--cloud">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="highlight-card__title">Cloud Security & Architecture</h3>
+                        <div class="highlight-card__metrics">
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">AWS</span>
+                                <span class="highlight-metric__label">Security Architecture</span>
+                            </div>
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">Azure</span>
+                                <span class="highlight-metric__label">Security Architecture</span>
+                            </div>
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">OCI</span>
+                                <span class="highlight-metric__label">Security Architecture</span>
+                            </div>
+                        </div>
+                        <p class="highlight-card__description">IAM, network security, logging, monitoring reviews. Preventive and detective guardrails.</p>
+                    </div>
+                    
+                    <!-- Cost & Optimization -->
+                    <div class="highlight-card">
+                        <div class="highlight-card__icon highlight-card__icon--ops">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="highlight-card__title">Cost & Optimization</h3>
+                        <div class="highlight-card__metrics">
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">$240K+</span>
+                                <span class="highlight-metric__label">Annual Cost Savings</span>
+                            </div>
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">33%</span>
+                                <span class="highlight-metric__label">Infrastructure Cost Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Migration & Scale -->
+                    <div class="highlight-card">
+                        <div class="highlight-card__icon highlight-card__icon--security">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h3 class="highlight-card__title">Migration & Scale</h3>
+                        <div class="highlight-card__metrics">
+                            <div class="highlight-metric">
+                                <span class="highlight-metric__value">500+</span>
+                                <span class="highlight-metric__label">Servers Migrated to AWS</span>
+                            </div>
+                        </div>
+                        <p class="highlight-card__description">Security-first cloud migration approach</p>
                     </div>
                 </div>
             </div>
@@ -1382,7 +1364,7 @@
                             <div class="timeline__summary">
                                 <h4 class="timeline__summary-title">Key Impact</h4>
                                 <ul class="timeline__list">
-                                    <li><strong>Lead SOC, IR & DFIR operations</strong> for 3,000+ employee organization across 10+ countries</li>
+                                    <li><strong>Lead SOC, IR & DFIR operations</strong> for 3,000+ employee organization across 22 countries</li>
                                     <li><strong>Reduced phishing click rates by 65%</strong> through security awareness program</li>
                                     <li><strong>Cut critical vulnerability backlog by 60%</strong> via risk-based prioritization</li>
                                     <li><strong>Built executive security dashboards</strong> enabling data-driven investment decisions</li>
@@ -1807,8 +1789,8 @@
         <!-- Skills Section -->
         <section class="skills section" id="skills">
             <div class="container">
-                <h2 class="section__title reveal">Skills & Expertise</h2>
-                <p class="section__subtitle reveal"><span class="text-highlight">Technical Expertise</span> & Domain Knowledge</p>
+                <h2 class="section__title reveal">Core Skills</h2>
+                <p class="section__subtitle reveal"><span class="text-highlight">Domain expertise</span> across security operations, cloud, and governance</p>
                 
                 <div class="skills__grid">
                     <div class="skill-group reveal">
@@ -1816,15 +1798,51 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             </svg>
-                            Security Operations & Incident Response
+                            SOC & Incident Response
                         </h3>
                         <div class="skill-group__tags">
-                            <span class="skill-tag">SOC Operations</span>
-                            <span class="skill-tag">Incident Response</span>
-                            <span class="skill-tag">Digital Forensics (DFIR)</span>
-                            <span class="skill-tag">Malware Analysis</span>
+                            <span class="skill-tag">SOC Operations (L1–L3)</span>
+                            <span class="skill-tag">Incident Response (P1/P2)</span>
+                            <span class="skill-tag">Digital Forensics</span>
+                            <span class="skill-tag">Evidence Handling</span>
                             <span class="skill-tag">Threat Hunting</span>
-                            <span class="skill-tag">Log Analysis</span>
+                            <span class="skill-tag">Alert Triage & Enrichment</span>
+                            <span class="skill-tag">MTTD/MTTR Improvement</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group__title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                            Security Platforms & Tooling
+                        </h3>
+                        <div class="skill-group__tags">
+                            <span class="skill-tag">EDR/XDR Workflows</span>
+                            <span class="skill-tag">SIEM & Log Management</span>
+                            <span class="skill-tag">Threat Intelligence Platforms</span>
+                            <span class="skill-tag">Phishing Detection & Response</span>
+                            <span class="skill-tag">Vulnerability Scanners</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group__title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                            </svg>
+                            Cloud & Infrastructure Security
+                        </h3>
+                        <div class="skill-group__tags">
+                            <span class="skill-tag">AWS Security Architecture</span>
+                            <span class="skill-tag">Azure Security</span>
+                            <span class="skill-tag">OCI Security</span>
+                            <span class="skill-tag">IAM</span>
+                            <span class="skill-tag">Network Security</span>
+                            <span class="skill-tag">Logging & Monitoring</span>
+                            <span class="skill-tag">Secure Cloud Migrations</span>
+                            <span class="skill-tag">Cost & Risk Optimization</span>
                         </div>
                     </div>
                     
@@ -1834,31 +1852,14 @@
                                 <circle cx="12" cy="12" r="3"></circle>
                                 <path d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m0 6l-4.242 4.242"></path>
                             </svg>
-                            Vulnerability & Threat Management
+                            Vulnerability Management
                         </h3>
                         <div class="skill-group__tags">
-                            <span class="skill-tag">Vulnerability Management</span>
-                            <span class="skill-tag">Threat Intelligence</span>
-                            <span class="skill-tag">Penetration Testing Coordination</span>
-                            <span class="skill-tag">Risk Assessment</span>
-                            <span class="skill-tag">Patch Management</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-                            </svg>
-                            Cloud Security
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">AWS Security</span>
-                            <span class="skill-tag">Azure Security</span>
-                            <span class="skill-tag">OCI Security</span>
-                            <span class="skill-tag">IAM</span>
-                            <span class="skill-tag">Cloud Security Architecture</span>
-                            <span class="skill-tag">CSPM</span>
+                            <span class="skill-tag">CVSS-Based Prioritization</span>
+                            <span class="skill-tag">Asset Criticality</span>
+                            <span class="skill-tag">Exploitability Analysis</span>
+                            <span class="skill-tag">Full Lifecycle Management</span>
+                            <span class="skill-tag">Remediation Tracking (Jira)</span>
                         </div>
                     </div>
                     
@@ -1874,108 +1875,9 @@
                             <span class="skill-tag">ISO 27001</span>
                             <span class="skill-tag">NIST CSF</span>
                             <span class="skill-tag">CIS Controls</span>
-                            <span class="skill-tag">Risk Management</span>
-                            <span class="skill-tag">Policy Development</span>
-                            <span class="skill-tag">Security Awareness</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                            </svg>
-                            Security Tools & Platforms
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">CrowdStrike</span>
-                            <span class="skill-tag">Hunters SIEM</span>
-                            <span class="skill-tag">Tenable</span>
-                            <span class="skill-tag">Orca Security</span>
-                            <span class="skill-tag">Snyk</span>
-                            <span class="skill-tag">Flare.io</span>
-                            <span class="skill-tag">Cyble</span>
-                            <span class="skill-tag">VirusTotal</span>
-                            <span class="skill-tag">Google Threat Intelligence</span>
-                            <span class="skill-tag">Keeper</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            Windows Server & Infrastructure
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">Windows Server 2000-2022</span>
-                            <span class="skill-tag">Active Directory</span>
-                            <span class="skill-tag">Group Policy (GPO)</span>
-                            <span class="skill-tag">DNS</span>
-                            <span class="skill-tag">DHCP</span>
-                            <span class="skill-tag">DFS</span>
-                            <span class="skill-tag">SCCM</span>
-                            <span class="skill-tag">WSUS</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                            </svg>
-                            Virtualization & Cloud Infrastructure
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">VMware ESXi/vSphere</span>
-                            <span class="skill-tag">Nutanix</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Azure</span>
-                            <span class="skill-tag">OCI</span>
-                            <span class="skill-tag">Disaster Recovery</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
-                            </svg>
-                            Identity & Access Management
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">Azure AD/Entra ID</span>
-                            <span class="skill-tag">Microsoft Intune</span>
-                            <span class="skill-tag">SSO</span>
-                            <span class="skill-tag">MFA</span>
-                            <span class="skill-tag">Conditional Access</span>
-                            <span class="skill-tag">LDAPS</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            Microsoft 365 & Collaboration
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">Exchange Online</span>
-                            <span class="skill-tag">SharePoint</span>
-                            <span class="skill-tag">Microsoft Teams</span>
-                            <span class="skill-tag">DLP</span>
-                            <span class="skill-tag">eDiscovery</span>
-                            <span class="skill-tag">Retention Policies</span>
+                            <span class="skill-tag">Risk Assessments</span>
+                            <span class="skill-tag">Audit Readiness & Evidence</span>
+                            <span class="skill-tag">Security Policies & Standards</span>
                         </div>
                     </div>
                     
@@ -1985,33 +1887,14 @@
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
                             </svg>
-                            Scripting & Automation
+                            Automation & AI in Security
                         </h3>
                         <div class="skill-group__tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">PowerShell</span>
-                            <span class="skill-tag">Power Automate</span>
-                            <span class="skill-tag">API Integration</span>
-                            <span class="skill-tag">GitHub Copilot</span>
-                            <span class="skill-tag">Cursor AI</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="3" y1="9" x2="21" y2="9"></line>
-                                <line x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
-                            Project & Service Management
-                        </h3>
-                        <div class="skill-group__tags">
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">ServiceNow</span>
-                            <span class="skill-tag">Confluence</span>
-                            <span class="skill-tag">ITIL</span>
-                            <span class="skill-tag">Change Management</span>
+                            <span class="skill-tag">SOC Automation</span>
+                            <span class="skill-tag">Alert Enrichment Workflows</span>
+                            <span class="skill-tag">AI-Assisted Triage</span>
+                            <span class="skill-tag">Security Process Automation</span>
+                            <span class="skill-tag">Scripts & Integrations</span>
                         </div>
                     </div>
                 </div>
@@ -2236,7 +2119,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Akshay Suryawanshi. All rights reserved.</p>
+            <p>&copy; 2026 Akshay Suryawanshi. All rights reserved.</p>
             <p class="footer__tagline">Securing systems. Enabling business. Leading teams.</p>
         </div>
     </footer>

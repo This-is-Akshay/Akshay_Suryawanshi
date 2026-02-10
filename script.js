@@ -72,12 +72,8 @@
         let infosecDisplay = infosecYears + '+';
 
         const updates = {
-            'infosec-exp': `${infosecDisplay} Years`,
-            'infosec-exp-about': `${infosecDisplay} Years`,
-            'infra-exp': formatDuration(infraDuration),
-            'infra-exp-about': `${infraDuration.years}+ years`,
             'total-exp': `${totalDuration.years}+ Years`,
-            'total-exp-hero': `${totalDuration.years}+ Years Experience`
+            'total-exp-hero': `${totalDuration.years}+`
         };
 
         for (const [id, value] of Object.entries(updates)) {
