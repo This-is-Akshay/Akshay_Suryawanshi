@@ -715,6 +715,7 @@ button {
     background: var(--color-bg-alt);
     color: var(--color-text-muted);
     transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    cursor: pointer;
 }
 
 .social-link:hover {
