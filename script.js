@@ -118,30 +118,34 @@
 // Resume Download Function (Global)
 // ===================================
 function downloadResume() {
-    if (typeof resumeBase64 === 'undefined') {
-        console.error('Resume data not loaded');
-        return;
+    try {
+        if (typeof resumeBase64 === 'undefined' || !resumeBase64) {
+            alert('Resume data not loaded. Please refresh the page and try again.');
+            return;
+        }
+
+        // Convert base64 to blob (CSP-safe, works with blob: URLs)
+        var byteCharacters = atob(resumeBase64);
+        var byteNumbers = new Array(byteCharacters.length);
+        for (var i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        var byteArray = new Uint8Array(byteNumbers);
+        var blob = new Blob([byteArray], { type: 'application/pdf' });
+
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'Akshay_Suryawanshi_Resume.pdf';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(function() { URL.revokeObjectURL(url); }, 5000);
+    } catch (err) {
+        console.error('Resume download failed:', err);
+        alert('Resume download failed. Please try again or contact me directly.');
     }
-    
-    // Convert base64 to blob
-    const byteCharacters = atob(resumeBase64);
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-        byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    const byteArray = new Uint8Array(byteNumbers);
-    const blob = new Blob([byteArray], { type: 'application/pdf' });
-    
-    // Create download link
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Akshay_Suryawanshi_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    // Delay revoking so the browser has time to start the download
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 // ===================================
@@ -754,3 +758,30 @@ function revealPhone() {
         init();
     }
 })();
+
+// ===================================
+// Event Listeners (CSP-safe, no inline handlers)
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Download resume buttons
+    var heroBtn = document.getElementById('download-resume-hero');
+    if (heroBtn) heroBtn.addEventListener('click', downloadResume);
+
+    var contactBtn = document.getElementById('download-resume-contact');
+    if (contactBtn) contactBtn.addEventListener('click', downloadResume);
+
+    // Email reveal and copy
+    var emailRevealBtn = document.getElementById('email-reveal-btn');
+    if (emailRevealBtn) emailRevealBtn.addEventListener('click', revealEmail);
+
+    var copyEmailBtn = document.getElementById('copy-email-btn');
+    if (copyEmailBtn) copyEmailBtn.addEventListener('click', copyEmail);
+
+    // Phone reveal
+    var phoneRevealBtn = document.getElementById('phone-reveal-btn');
+    if (phoneRevealBtn) phoneRevealBtn.addEventListener('click', revealPhone);
+
+    // LinkedIn copy
+    var copyLinkedInBtn = document.getElementById('copy-linkedin-btn');
+    if (copyLinkedInBtn) copyLinkedInBtn.addEventListener('click', copyLinkedIn);
+});

@@ -1,0 +1,12 @@
+# PDF resume files (resume is base64-encoded in resume-data.js)
+*.pdf
+
+# Node modules
+node_modules/
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
