@@ -140,7 +140,8 @@ function downloadResume() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    // Delay revoking so the browser has time to start the download
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 // ===================================
