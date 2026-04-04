@@ -558,6 +558,28 @@ button {
     font-size: 0.85rem;
 }
 
+/* Certification Badge Pills */
+.hero__cert-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero__cert-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.hero__cert-badge--cism    { background: #1a2b4a; }
+.hero__cert-badge--az500   { background: #0078D4; }
+.hero__cert-badge--aws     { background: #FF9900; }
+.hero__cert-badge--comptia { background: #C8202F; }
+
 /* Key Security Initiatives */
 .hero__initiatives {
     margin-bottom: var(--spacing-xl);
@@ -1666,6 +1688,13 @@ button {
 
 .skill-group__title svg {
     color: var(--color-primary);
+}
+
+.skill-group__description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
 }
 
 .skill-group__tags {
