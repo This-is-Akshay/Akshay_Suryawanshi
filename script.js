@@ -73,7 +73,7 @@
 
         const updates = {
             'total-exp': `${totalDuration.years}+ Years`,
-            'total-exp-hero': '8+'
+            'total-exp-hero': '7+'
         };
 
         for (const [id, value] of Object.entries(updates)) {
