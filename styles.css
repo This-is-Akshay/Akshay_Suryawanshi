@@ -1712,6 +1712,15 @@ button {
     border-radius: var(--radius-full);
     border: 1px solid var(--color-border);
     transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.contact__domains {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: none;
 }
 
 .skill-tag:hover {
