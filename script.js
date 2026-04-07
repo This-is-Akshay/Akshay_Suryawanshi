@@ -136,7 +136,7 @@ function downloadResume() {
         var url = URL.createObjectURL(blob);
         var link = document.createElement('a');
         link.href = url;
-        link.download = 'Akshay_Suryawanshi_Mar-2026.pdf';
+        link.download = 'Akshay_Suryawanshi_Apr-2026.pdf';
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
