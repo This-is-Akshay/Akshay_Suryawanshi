@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG Image — Akshay Suryawanshi</title>
+<style>
+  /* This file renders to a 1200x630 PNG via render.js (Playwright).
+     The #banner element is what gets screenshotted. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    color: #f1f5f9;
+  }
+
+  #banner {
+    width: 1200px;
+    height: 630px;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.14) 0%, transparent 45%),
+      linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 72px 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle accent bar on the left edge */
+  #banner::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(180deg, #60a5fa 0%, #34d399 100%);
+  }
+
+  .eyebrow {
+    font-size: 22px;
+    font-weight: 600;
+    color: #60a5fa;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .name {
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f1f5f9 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 24px 0 16px 0;
+  }
+
+  .tagline {
+    font-size: 28px;
+    font-weight: 500;
+    color: #94a3b8;
+    line-height: 1.4;
+    max-width: 920px;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .badge--cism    { background: #1a2b4a; }
+  .badge--az500   { background: #0078D4; }
+  .badge--aws     { background: #FF9900; color: #1a2b4a; }
+  .badge--comptia { background: #C8202F; }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .url {
+    font-size: 22px;
+    font-weight: 600;
+    color: #34d399;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+  <div id="banner">
+    <div>
+      <p class="eyebrow">Lead InfoSec Engineer</p>
+      <h1 class="name">Akshay Suryawanshi</h1>
+      <p class="tagline">Cloud Security &middot; Security Architecture &middot; AI Security &middot; GRC</p>
+    </div>
+
+    <div class="footer-row">
+      <div class="badges">
+        <span class="badge badge--cism">CISM</span>
+        <span class="badge badge--comptia">Security+</span>
+        <span class="badge badge--aws">AWS SAA</span>
+        <span class="badge badge--aws">AWS AI</span>
+        <span class="badge badge--az500">AZ-500</span>
+      </div>
+      <p class="url">akshaysuryawanshi.com</p>
+    </div>
+  </div>
+</body>
+</html>

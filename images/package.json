@@ -1,0 +1,16 @@
+{
+  "name": "linkedin-banner-generator",
+  "version": "1.0.0",
+  "description": "Generate LinkedIn profile background banner as PNG",
+  "main": "render.js",
+  "scripts": {
+    "render": "node render.js",
+    "setup": "npx playwright install chromium",
+    "build": "npm run setup && npm run render"
+  },
+  "devDependencies": {
+    "playwright": "^1.57.0"
+  },
+  "author": "Akshay Suryawanshi",
+  "license": "MIT"
+}

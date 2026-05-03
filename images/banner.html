@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html, body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+    }
+    
+    #banner {
+      width: 1584px;
+      height: 396px;
+      position: relative;
+      background: linear-gradient(110deg, #0f172a 0%, #1e293b 100%);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+    
+    /* Simple accent line */
+    .accent {
+      position: absolute;
+      left: 430px;
+      top: 90px;
+      width: 4px;
+      height: 200px;
+      background: #3b82f6;
+      border-radius: 2px;
+    }
+    
+    /* Text content */
+    .content {
+      position: absolute;
+      left: 460px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .name {
+      font-size: 54px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    
+    .role {
+      font-size: 24px;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+    
+    .skills {
+      font-size: 14px;
+      font-weight: 400;
+      color: #64748b;
+      line-height: 1.8;
+    }
+    
+    .skills span {
+      color: #475569;
+      margin: 0 8px;
+    }
+    
+    /* Simple dots pattern - right side */
+    .dots {
+      position: absolute;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <div class="accent"></div>
+    
+    <div class="content">
+      <div class="name">Akshay Suryawanshi</div>
+      <div class="role">Lead Information Security Engineer</div>
+      <div class="skills">
+        Information Security<span>•</span>Cybersecurity<span>•</span>Incident Response<span>•</span>Digital Forensics<br>
+        SOC Operations<span>•</span>Cloud Security<span>•</span>Vulnerability Management<span>•</span>GRC
+      </div>
+    </div>
+    
+    <!-- Simple geometric pattern -->
+    <div class="dots">
+      <div class="dot" style="width: 12px; height: 12px; opacity: 0.6; right: 0; top: -80px;"></div>
+      <div class="dot" style="width: 8px; height: 8px; opacity: 0.4; right: 60px; top: -40px;"></div>
+      <div class="dot" style="width: 16px; height: 16px; opacity: 0.5; right: 120px; top: -100px;"></div>
+      <div class="dot" style="width: 10px; height: 10px; opacity: 0.3; right: 180px; top: -20px;"></div>
+      <div class="dot" style="width: 6px; height: 6px; opacity: 0.5; right: 40px; top: 20px;"></div>
+      <div class="dot" style="width: 14px; height: 14px; opacity: 0.4; right: 100px; top: 60px;"></div>
+      <div class="dot" style="width: 8px; height: 8px; opacity: 0.6; right: 200px; top: 40px;"></div>
+      <div class="dot" style="width: 10px; height: 10px; opacity: 0.3; right: 160px; top: 100px;"></div>
+      <div class="dot" style="width: 6px; height: 6px; opacity: 0.4; right: 20px; top: 80px;"></div>
+    </div>
+  </div>
+</body>
+</html>

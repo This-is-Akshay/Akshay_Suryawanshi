@@ -136,7 +136,7 @@ function downloadResume() {
         var url = URL.createObjectURL(blob);
         var link = document.createElement('a');
         link.href = url;
-        link.download = 'Akshay_Suryawanshi_Apr-2026.pdf';
+        link.download = 'Akshay_Suryawanshi_CV.pdf';
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
@@ -784,4 +784,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // LinkedIn copy
     var copyLinkedInBtn = document.getElementById('copy-linkedin-btn');
     if (copyLinkedInBtn) copyLinkedInBtn.addEventListener('click', copyLinkedIn);
+
+    // Draft preview banner: show only when ?draft=1 is in URL.
+    if (new URLSearchParams(window.location.search).get('draft') === '1') {
+        var draftBanner = document.getElementById('draft-banner');
+        if (draftBanner) draftBanner.hidden = false;
+    }
+
+    // Impact "See all initiatives" expand/collapse.
+    // Wrapper uses aria-hidden + grid-template-rows transition for two-way smoothness.
+    var impactToggle = document.getElementById('impact-toggle');
+    var impactExtrasWrap = document.getElementById('impact-extras-wrap');
+    if (impactToggle && impactExtrasWrap) {
+        impactToggle.addEventListener('click', function () {
+            var expanded = impactToggle.getAttribute('aria-expanded') === 'true';
+            impactToggle.setAttribute('aria-expanded', String(!expanded));
+            impactExtrasWrap.setAttribute('aria-hidden', String(expanded));
+            var label = impactToggle.querySelector('.impact-toggle__label');
+            if (label) label.textContent = expanded ? 'See all initiatives' : 'Show fewer';
+        });
+    }
+
+    // Case Study card accordion toggles.
+    document.querySelectorAll('.case-study-card__toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            var targetId = btn.getAttribute('aria-controls');
+            var details = targetId && document.getElementById(targetId);
+            if (details) details.hidden = expanded;
+            var label = btn.querySelector('span');
+            if (label) label.textContent = expanded ? 'Read case study' : 'Hide case study';
+        });
+    });
 });

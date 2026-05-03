@@ -10,3 +10,7 @@ node_modules/
 # Python
 __pycache__/
 *.pyc
+.venv/
+
+# Claude Code local config (user-specific, do not commit)
+.claude/
