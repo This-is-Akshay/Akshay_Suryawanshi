@@ -430,11 +430,13 @@ button {
 }
 
 .hero__role {
-    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-family: var(--font-sans);
+    font-size: clamp(1.125rem, 1.4vw, 1.25rem);
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--color-text-muted);
     margin-bottom: var(--spacing-xs);
     line-height: 1.3;
+    letter-spacing: 0.01em;
 }
 
 .hero__tagline {
@@ -472,22 +474,153 @@ button {
     font-size: 0.85rem;
 }
 
-.hero__value-prop {
-    font-size: 1.05rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    max-width: 600px;
-    margin-bottom: var(--spacing-md);
+/* LAYER 1: One-liner — small supporting hook below the role label.
+   Intentionally smaller than the role label so the role reads as the anchor. */
+.hero__one-liner {
+    font-family: var(--font-sans);
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.5;
+    letter-spacing: 0;
+    max-width: 620px;
+    margin: var(--spacing-md) auto var(--spacing-lg) auto;
 }
 
 @media (min-width: 900px) {
-    .hero__value-prop {
+    .hero__one-liner {
         text-align: left;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
-.hero__value-prop strong {
+/* LAYER 2: Stats grid — three dashboard-style metric blocks with breathing room. */
+.hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    max-width: 620px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+@media (max-width: 540px) {
+    .hero__stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (min-width: 900px) {
+    .hero__stats {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: var(--spacing-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__stat:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.hero__stat-value {
+    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.hero__stat-label {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+}
+
+.hero__stat-sublabel {
+    font-size: 0.65rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    margin-top: 0.2rem;
+}
+
+/* LAYER 3: Narrative — short prose paragraph for those who want the story. */
+.hero__narrative {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+.hero__narrative strong {
     color: var(--color-text);
+}
+
+@media (min-width: 900px) {
+    .hero__narrative {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Keyword pills — replaces the old plain-text specialization line. */
+.hero__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 900px) {
+    .hero__keywords {
+        justify-content: flex-start;
+    }
+}
+
+.hero__keyword {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.hero__keyword:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .hero__keyword {
+    background: rgba(96, 165, 250, 0.15);
+    color: var(--color-primary);
+    border-color: rgba(96, 165, 250, 0.25);
 }
 
 .hero__impact {
@@ -593,16 +726,6 @@ a.hero__cert-badge:focus-visible {
 .hero__cert-badge--aws     { background: #b5750d; }  /* dark amber  - AWS        */
 .hero__cert-badge--az500   { background: #005a9e; }  /* dark blue   - Microsoft  */
 
-/* Hero specialization: domain-tags line under the role title.
-   Smaller and muted so the role title stays the dominant secondary line. */
-.hero__specialization {
-    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-    font-weight: 500;
-    color: var(--color-text-muted);
-    letter-spacing: 0.02em;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.5;
-}
 
 /* Impact section: outcome-focused statement list with expandable extras. */
 .impact-list {
@@ -650,8 +773,14 @@ a.hero__cert-badge:focus-visible {
 }
 
 .impact-item p strong {
-    color: var(--color-text);
-    font-weight: 700;
+    color: var(--color-primary);
+    font-weight: 800;
+    font-size: 1.05em;
+    letter-spacing: -0.005em;
+}
+
+[data-theme="dark"] .impact-item p strong {
+    color: var(--color-primary);
 }
 
 .impact-more {
@@ -1369,19 +1498,37 @@ a.hero__cert-badge:focus-visible {
 }
 
 .highlight-card {
+    position: relative;
     background: var(--color-bg-card);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
     text-align: center;
+    overflow: hidden;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    opacity: 0;
+    transition: opacity var(--transition-base);
 }
 
 .highlight-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
+}
+
+.highlight-card:hover::before {
+    opacity: 1;
 }
 
 .highlight-card__icon {
@@ -2182,23 +2329,27 @@ a.hero__cert-badge:focus-visible {
 
 /* ===================================
    Contact Section
+   Single centered column — CV button sits at the bottom of the info list.
    =================================== */
 .contact__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-}
-
-@media (min-width: 768px) {
-    .contact__grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    display: flex;
+    justify-content: center;
 }
 
 .contact__info {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 520px;
+}
+
+.contact__cv {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: flex-start;
 }
 
 .contact__item {
@@ -2232,6 +2383,12 @@ a.hero__cert-badge:focus-visible {
     word-break: break-word;
 }
 
+.contact__availability-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light) !important;
+    font-weight: 400;
+}
+
 .contact__details a:hover {
     color: var(--color-primary);
 }
@@ -2249,34 +2406,6 @@ a.hero__cert-badge:focus-visible {
     border-color: var(--color-primary);
 }
 
-.contact__cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact__cta-content {
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-light));
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-2xl);
-    text-align: center;
-    border: 1px solid var(--color-border);
-}
-
-.contact__cta-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-sm);
-}
-
-.contact__cta-content p {
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-lg);
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* ===================================
    Footer
