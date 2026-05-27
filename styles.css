@@ -1489,12 +1489,24 @@ a.hero__cert-badge:focus-visible {
     gap: var(--spacing-lg);
 }
 
-/* Domains-only: bound card width and center the row content so a partial
-   final row (e.g. 2 cards alone) sits centered instead of left-aligned.
-   Other .highlights__grid users keep the auto-fit + 1fr stretch behavior. */
+/* Domains-only: switch to flex-wrap so an orphan card on the final row
+   sits centered instead of left-aligned. Cards keep a bounded width. */
 #domains .highlights__grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 360px));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+#domains .highlight-card {
+    flex: 1 1 280px;
+    max-width: 340px;
+}
+
+@media (max-width: 540px) {
+    #domains .highlight-card {
+        max-width: 100%;
+    }
 }
 
 .highlight-card {
@@ -2219,9 +2231,21 @@ a.hero__cert-badge:focus-visible {
 }
 
 .certifications__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-lg);
+}
+
+.cert-card {
+    flex: 1 1 220px;
+    max-width: 240px;
+}
+
+@media (max-width: 480px) {
+    .cert-card {
+        max-width: 100%;
+    }
 }
 
 .cert-card {
