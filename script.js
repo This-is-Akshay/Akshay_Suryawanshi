@@ -71,9 +71,11 @@
         let infosecYears = infosecDuration.years;
         let infosecDisplay = infosecYears + '+';
 
+        // Total career: auto-calculated from May 2017 so it never goes stale
+        const totalYears = totalDuration.years;
         const updates = {
-            'total-exp': '8+ Years',
-            'total-exp-hero': '8+'
+            'total-exp': totalYears + '+ Years',
+            'total-exp-hero': totalYears + '+'
         };
 
         for (const [id, value] of Object.entries(updates)) {

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="AWS Certified Security Specialty">
+  <!-- Placeholder badge. Replace with the official Credly badge image when available. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7b2cbf"/>
+      <stop offset="1" stop-color="#3c096c"/>
+    </linearGradient>
+  </defs>
+  <polygon points="300,10 551,155 551,445 300,590 49,445 49,155" fill="#9d4edd"/>
+  <polygon points="300,30 534,165 534,435 300,570 66,435 66,165" fill="url(#g)"/>
+  <text x="300" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="600" fill="#fff">AWS</text>
+  <text x="300" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="40" fill="#fff">certified</text>
+  <line x1="155" y1="235" x2="445" y2="235" stroke="#fff" stroke-width="3"/>
+  <text x="300" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="700" fill="#fff">Security</text>
+  <line x1="155" y1="375" x2="445" y2="375" stroke="#fff" stroke-width="3"/>
+  <text x="300" y="425" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="8" fill="#fff">SPECIALTY</text>
+</svg>
